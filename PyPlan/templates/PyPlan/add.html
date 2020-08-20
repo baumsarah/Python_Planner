@@ -1,0 +1,12 @@
+{% extends "PyPlan/layout.html" %}
+
+{% block body %}
+    <h1>Add Planner:</h1>
+    <form action="{% url 'PyPlan:add' %}" method="post">
+        {% csrf_token %}
+        {{planner}}
+        <input type="submit">
+    </form>
+    <br>
+    <a href="{% url 'PyPlan:index' %}">View Planners</a>
+{% endblock %}

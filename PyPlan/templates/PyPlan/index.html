@@ -1,9 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Hello</title>
-    </head>
-    <body>
-        <h1>Hello, World!</h1>
-    </body>
-</html>
+{% extends "PyPlan/layout.html" %}
+
+{% block body %}
+    <h1>Planners:</h1>
+    <ul>
+        {% for planner in planners %}
+            <li>{{planner}}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'PyPlan:add' %}">Add a New Planner</a>
+{% endblock %}
